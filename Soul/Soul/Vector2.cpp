@@ -1,5 +1,5 @@
 #include "Vector2.h"
-#include <array>
+#include "Vector3.h"
 
 using namespace SoulMaths;
 
@@ -247,4 +247,9 @@ Vector2 & SoulMaths::Vector2::Rotate(const float & rotation)
 SoulMaths::Vector2::operator Swizzle2()
 {
 	return Swizzle2(x, y);
+}
+
+SoulMaths::Vector2::operator Vector3()
+{
+	return Vector3(x, y, 0);
 }

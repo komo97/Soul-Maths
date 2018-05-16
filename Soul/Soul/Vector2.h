@@ -46,6 +46,7 @@ namespace SoulMaths {
 		Vector2& Translate(const Vector2& translate);
 		Vector2& Rotate(const float& rotation);
 		operator Swizzle2();
+		operator Vector3();
 		//Faltan matrices, operaciones con vector3, vector4, y operaciones con matrices y producto cruz
 	};
 

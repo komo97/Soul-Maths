@@ -1,5 +1,9 @@
 #pragma once
 namespace SoulMaths {
+
+#define SOUL_OUT_OF_RANGE 1234454.1134155555112f;
+
+
 	const float pi = 3.14159265359f;
 	const float rad2deg = 57.2957795130785f;
 	const float deg2rad = 0.01745329251994f;

@@ -1,8 +1,11 @@
 #pragma once
-class Matrix2
-{
-public:
-	Matrix2();
-	~Matrix2();
-};
+namespace SoulMaths {
 
+	class Matrix2
+	{
+	public:
+		Matrix2();
+		~Matrix2();
+	};
+
+};
