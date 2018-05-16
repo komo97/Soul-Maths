@@ -46,6 +46,13 @@ Vector2 & SoulMaths::Vector2::operator-=(const Vector2 & rhs)
 	return *this;
 }
 
+Vector2 & SoulMaths::Vector2::operator*=(const Vector2 & rhs)
+{
+	x *= rhs.x;
+	y *= rhs.y;
+	return *this;
+}
+
 Vector2 & SoulMaths::Vector2::operator*=(const float & rhs)
 {
 	x *= rhs;
@@ -60,6 +67,11 @@ Vector2 & SoulMaths::Vector2::operator/=(const float & rhs)
 	x /= rhs;
 	y /= rhs;
 	return *this;
+}
+
+Vector2 SoulMaths::Vector2::operator*(const Vector2 & rhs) const
+{
+	return Vector2();
 }
 
 Vector2 SoulMaths::Vector2::operator+(const Vector2 & rhs) const
@@ -169,21 +181,66 @@ float SoulMaths::Vector2::MagnitudeSqr() const
 
 Vector2 & SoulMaths::Vector2::Scale(const float & scale, const Axis & axis)
 {
+	switch (axis)
+	{
+	case Axis::AxisX:
+		x *= scale;
+		break;
+	case Axis::AxisY:
+		y *= scale;
+		break;
+	case Axis::AxisZ:
+		break;
+	case Axis::AxisW:
+		break;
+	case Axis::AxisXY:
+		x *= scale;
+		y *= scale;
+		break;
+	case Axis::AxisXZ:
+		break;
+	case Axis::AxisXW:
+		break;
+	case Axis::AxisYZ:
+		break;
+	case Axis::AxisYW:
+		break;
+	case Axis::AxisZW:
+		break;
+	case Axis::AxisXYZ:
+		break;
+	case Axis::AxisXYW:
+		break;
+	case Axis::AxisXZW:
+		break;
+	case Axis::AxisYZW:
+		break;
+	case Axis::AxisXYZW:
+		break;
+	default:
+		break;
+	}
 	return *this;
 }
 
 Vector2 & SoulMaths::Vector2::Scale(const Vector2 & scale)
 {
+	*this *= scale;
 	return *this;
 }
 
 Vector2 & SoulMaths::Vector2::Translate(const Vector2 & translate)
 {
+	*this += translate;
 	return *this;
 }
 
 Vector2 & SoulMaths::Vector2::Rotate(const float & rotation)
 {
+	float sine = sin(deg2rad * rotation),
+		cosine = cos(deg2rad * rotation);
+	x = (x * cosine) + (y * (0 - sine));
+	y = (x * sine) + (y * cosine);
 	return *this;
 }
 

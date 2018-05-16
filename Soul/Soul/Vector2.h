@@ -17,8 +17,10 @@ namespace SoulMaths {
 			&y;
 		Vector2& operator+=(const Vector2& rhs);
 		Vector2& operator-=(const Vector2& rhs);
+		Vector2& operator*=(const Vector2& rhs);
 		Vector2& operator*=(const float& rhs);
 		Vector2& operator/=(const float& rhs);
+		Vector2 operator*(const Vector2& rhs) const;
 		Vector2 operator+(const Vector2& rhs) const;
 		Vector2 operator-(const Vector2& rhs) const;
 		Vector2 operator/(const float& rhs) const;
